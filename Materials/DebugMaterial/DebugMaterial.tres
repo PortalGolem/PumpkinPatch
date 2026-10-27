@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://mmm43l5400g2"]
+
+[ext_resource type="Shader" uid="uid://cxvec7siym4e3" path="res://Materials/DebugMaterial/DebugMaterial.gdshader" id="1_vhpd5"]
+[ext_resource type="Texture2D" uid="uid://ban6h1bebghhl" path="res://Materials/DebugMaterial/Prototype_Grid_Gray_03-256x256.png" id="2_vhpd5"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vhpd5")
+shader_parameter/Texture = ExtResource("2_vhpd5")
