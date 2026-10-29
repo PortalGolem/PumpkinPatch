@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://mmm43l5400g2" path="res://Materials/DebugMaterial/DebugMaterial.tres" id="1_6utim"]
 [ext_resource type="PackedScene" uid="uid://chbd46sg8tuw0" path="res://Objects/player_controller.tscn" id="2_j61sk"]
 [ext_resource type="Script" uid="uid://c44ngf2bwxpfm" path="res://Scripts/PlayerController/player_controller.gd" id="3_p8dlm"]
+[ext_resource type="Script" uid="uid://d0c4fck4jwjuu" path="res://Scripts/EnviornmentGeneration/pumpkin_spawner.gd" id="4_b4fxb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3slyq"]
 size = Vector3(100, 1, 100)
@@ -35,12 +36,13 @@ mesh = SubResource("BoxMesh_3slyq")
 [node name="PlayerController" parent="." unique_id=1117835094 instance=ExtResource("2_j61sk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1055088, 0)
 script = ExtResource("3_p8dlm")
-SPEED = null
-JUMP_VELOCITY = null
-SENSITIVITY = null
+SENSITIVITY = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1714390327]
 environment = SubResource("Environment_37okk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1782423802]
 transform = Transform3D(-0.64176416, 0.54571235, -0.53882915, 0, 0.7026049, 0.7115802, 0.7669021, 0.45666668, -0.45090663, 0, 4.0572433, 0)
+
+[node name="PumpkinSpawner" type="Node3D" parent="." unique_id=1892598019]
+script = ExtResource("4_b4fxb")

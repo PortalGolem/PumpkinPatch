@@ -11,8 +11,15 @@ var cameraRotation:Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	var cameraStartingRotation:Vector3 = $Camera3D.basis.get_euler()
+	cameraRotation = Vector2(cameraStartingRotation.x, cameraStartingRotation.y)
+	cameraRotation.x = clamp(cameraRotation.x, MIN_LOOK_HEIGHT, MAX_LOOK_HEIGHT)
+	$Camera3D.basis = Basis.IDENTITY
+	$Camera3D.rotate_x(deg_to_rad(cameraRotation.x))
+	$Camera3D.rotate_y(deg_to_rad(cameraRotation.y))
 
 func _input(event: InputEvent) -> void:
+	# Handle mouse input.
 	if event is InputEventMouseMotion:
 		cameraRotation.x -= event.relative.y
 		cameraRotation.y -= event.relative.x
