@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d1se074l3sqsf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_37okk"]
+radius = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4fxb"]
+albedo_color = Color(1, 0.6166667, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_37okk"]
+material = SubResource("StandardMaterial3D_b4fxb")
+radius = 0.2
+height = 0.4
+
+[node name="Pumpkin" type="StaticBody3D" unique_id=1402079855]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=639837038]
+shape = SubResource("SphereShape3D_37okk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2008703957]
+mesh = SubResource("SphereMesh_37okk")

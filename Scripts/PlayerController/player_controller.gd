@@ -40,7 +40,9 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards")
-	var direction:Vector3 = ($Camera3D.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction:Vector3 = ($Camera3D.basis * Vector3(input_dir.x, 0, input_dir.y))
+	direction = direction - Vector3(0, direction.y, 0)
+	direction = direction.normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED

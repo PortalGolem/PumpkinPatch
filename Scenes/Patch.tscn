@@ -45,4 +45,9 @@ environment = SubResource("Environment_37okk")
 transform = Transform3D(-0.64176416, 0.54571235, -0.53882915, 0, 0.7026049, 0.7115802, 0.7669021, 0.45666668, -0.45090663, 0, 4.0572433, 0)
 
 [node name="PumpkinSpawner" type="Node3D" parent="." unique_id=1892598019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47706962, 0)
 script = ExtResource("4_b4fxb")
+MAX_PUMPKINS_PER_PATCH = 20
+MIN_PUMPKINS_PER_PATCH = 10
+MIN_DISTANCE_BETWEEN_PUMPKINS = 0.1
+WHOLE_PATCH_SIZE = 50.0
