@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3x4v21vd7sja"]
 
 [ext_resource type="Material" uid="uid://mmm43l5400g2" path="res://Materials/DebugMaterial/DebugMaterial.tres" id="1_6utim"]
-[ext_resource type="PackedScene" uid="uid://chbd46sg8tuw0" path="res://Objects/player_controller.tscn" id="2_j61sk"]
+[ext_resource type="PackedScene" uid="uid://chbd46sg8tuw0" path="res://Objects/PlayerController/player_controller.tscn" id="2_j61sk"]
 [ext_resource type="Script" uid="uid://c44ngf2bwxpfm" path="res://Scripts/PlayerController/player_controller.gd" id="3_p8dlm"]
 [ext_resource type="Script" uid="uid://d0c4fck4jwjuu" path="res://Scripts/EnviornmentGeneration/pumpkin_spawner.gd" id="4_b4fxb"]
 

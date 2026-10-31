@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://chbd46sg8tuw0"]
 
+[ext_resource type="PackedScene" uid="uid://b3cysp4rw2vdg" path="res://Objects/PlayerController/player_item_slot.tscn" id="1_3u00o"]
+[ext_resource type="Script" uid="uid://blvoi0uakjtdt" path="res://Scripts/PlayerController/player_item_slot.gd" id="2_0i3eb"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_37okk"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_37okk"]
@@ -14,3 +17,6 @@ mesh = SubResource("CapsuleMesh_37okk")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=146121989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5581207, 0)
+
+[node name="PlayerItemSlot" parent="." unique_id=1637532678 instance=ExtResource("1_3u00o")]
+script = ExtResource("2_0i3eb")
