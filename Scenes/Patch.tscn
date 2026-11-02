@@ -2,7 +2,6 @@
 
 [ext_resource type="Material" uid="uid://mmm43l5400g2" path="res://Materials/DebugMaterial/DebugMaterial.tres" id="1_6utim"]
 [ext_resource type="PackedScene" uid="uid://chbd46sg8tuw0" path="res://Objects/PlayerController/player_controller.tscn" id="2_j61sk"]
-[ext_resource type="Script" uid="uid://c44ngf2bwxpfm" path="res://Scripts/PlayerController/player_controller.gd" id="3_p8dlm"]
 [ext_resource type="Script" uid="uid://d0c4fck4jwjuu" path="res://Scripts/EnviornmentGeneration/pumpkin_spawner.gd" id="4_b4fxb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3slyq"]
@@ -21,7 +20,7 @@ sky_material = SubResource("ProceduralSkyMaterial_2gruq")
 background_mode = 2
 sky = SubResource("Sky_fo3dt")
 
-[node name="Node3D" type="Node3D" unique_id=638634852]
+[node name="Patch" type="Node3D" unique_id=638634852]
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=2140078115]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.311849, 0)
@@ -35,8 +34,6 @@ mesh = SubResource("BoxMesh_3slyq")
 
 [node name="PlayerController" parent="." unique_id=1117835094 instance=ExtResource("2_j61sk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1055088, 0)
-script = ExtResource("3_p8dlm")
-SENSITIVITY = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1714390327]
 environment = SubResource("Environment_37okk")

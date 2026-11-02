@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cdusatb605rjj"]
+
+[ext_resource type="Script" uid="uid://b7mdl1o0sex3j" path="res://Scripts/PlayerController/Items/axe_item.gd" id="1_xoksn"]
+[ext_resource type="PackedScene" uid="uid://dgvu4nxfjvb7q" path="res://Assets/Axe/Axe.fbx" id="2_0qx1c"]
+
+[node name="AxeItem" type="Node3D" unique_id=2025713579]
+script = ExtResource("1_xoksn")
+
+[node name="Axe" parent="." unique_id=1189739372 instance=ExtResource("2_0qx1c")]

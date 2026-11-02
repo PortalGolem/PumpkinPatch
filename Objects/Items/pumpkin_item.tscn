@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5cb1f62ysn0i"]
+
+[ext_resource type="Script" uid="uid://doiimistk7i2j" path="res://Scripts/PlayerController/Items/pumpkin_item.gd" id="1_0u0wt"]
+[ext_resource type="Material" uid="uid://cu8tpxdo4sbqc" path="res://Materials/pumpkin.tres" id="2_lgh7v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_37okk"]
+material = ExtResource("2_lgh7v")
+radius = 0.2
+height = 0.4
+
+[node name="PumpkinItem" type="Node3D" unique_id=1282230549]
+script = ExtResource("1_0u0wt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1932587008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6663737, 0.58262765, -1.3186152)
+mesh = SubResource("SphereMesh_37okk")

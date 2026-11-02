@@ -1,20 +1,28 @@
 [gd_scene format=3 uid="uid://d1se074l3sqsf"]
 
+[ext_resource type="Script" uid="uid://cyrm6xypmiat" path="res://Scripts/PlayerController/Items/GroundItem.gd" id="1_f51yi"]
+[ext_resource type="PackedScene" uid="uid://b5cb1f62ysn0i" path="res://Objects/Items/pumpkin_item.tscn" id="2_2ww25"]
+[ext_resource type="Material" uid="uid://cu8tpxdo4sbqc" path="res://Materials/pumpkin.tres" id="2_yj06k"]
+[ext_resource type="Script" uid="uid://pp6yya5hxhrf" path="res://Scripts/axeable.gd" id="4_8werk"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_37okk"]
 radius = 0.2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4fxb"]
-albedo_color = Color(1, 0.6166667, 0, 1)
-
 [sub_resource type="SphereMesh" id="SphereMesh_37okk"]
-material = SubResource("StandardMaterial3D_b4fxb")
+material = ExtResource("2_yj06k")
 radius = 0.2
 height = 0.4
 
 [node name="Pumpkin" type="StaticBody3D" unique_id=1402079855]
+script = ExtResource("1_f51yi")
+itemScene = ExtResource("2_2ww25")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=639837038]
 shape = SubResource("SphereShape3D_37okk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2008703957]
 mesh = SubResource("SphereMesh_37okk")
+
+[node name="Axeable" type="Node3D" parent="." unique_id=154986040]
+script = ExtResource("4_8werk")
+metadata/_custom_type_script = "uid://pp6yya5hxhrf"

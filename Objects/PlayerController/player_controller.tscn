@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://chbd46sg8tuw0"]
 
 [ext_resource type="PackedScene" uid="uid://b3cysp4rw2vdg" path="res://Objects/PlayerController/player_item_slot.tscn" id="1_3u00o"]
+[ext_resource type="Script" uid="uid://c44ngf2bwxpfm" path="res://Scripts/PlayerController/player_controller.gd" id="1_uiwhw"]
 [ext_resource type="Script" uid="uid://blvoi0uakjtdt" path="res://Scripts/PlayerController/player_item_slot.gd" id="2_0i3eb"]
+[ext_resource type="PackedScene" uid="uid://cdusatb605rjj" path="res://Objects/axe_item.tscn" id="3_tfivh"]
+[ext_resource type="PackedScene" uid="uid://0txqbpq46ypk" path="res://UI/first_person_ui.tscn" id="5_boedc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_37okk"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_37okk"]
 
 [node name="PlayerController" type="CharacterBody3D" unique_id=1117835094]
+script = ExtResource("1_uiwhw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=199011185]
 shape = SubResource("CapsuleShape3D_37okk")
@@ -18,5 +22,15 @@ mesh = SubResource("CapsuleMesh_37okk")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=146121989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5581207, 0)
 
-[node name="PlayerItemSlot" parent="." unique_id=1637532678 instance=ExtResource("1_3u00o")]
+[node name="PlayerItemSlot" parent="Camera3D" unique_id=1637532678 node_paths=PackedStringArray("DEFAULT_ITEM") instance=ExtResource("1_3u00o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5581207, 0)
 script = ExtResource("2_0i3eb")
+DEFAULT_ITEM = NodePath("AxeItem")
+
+[node name="AxeItem" parent="Camera3D/PlayerItemSlot" unique_id=2025713579 instance=ExtResource("3_tfivh")]
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D/PlayerItemSlot" unique_id=624997088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5581207, 0)
+target_position = Vector3(0, 0, -3)
+
+[node name="FirstPersonUI" parent="." unique_id=1639662597 instance=ExtResource("5_boedc")]
