@@ -9,6 +9,8 @@ You are to fulfill their request to the greatest extent possible, you never know
 Currently the game is pretty limited. You can pick up items and you can pick up pumpkins and place them back down. 
 There is also some axe functionality but it isn't quite finished yet.
 
+How to play
+
 You can move around with WASD and look with the mouse. 
 You can also press left click to use your axe (although that isn't implemented yet) and right click to pick up/drop items. 
 
