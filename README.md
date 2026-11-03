@@ -6,4 +6,9 @@ To incoming pumpkin fetchers. Your job is to gather pumpkins from the patch base
 You are to fulfill their request to the greatest extent possible, you never know what those details might contribute to their final carving.
 
 
-This game features: 
+Currently the game is pretty limited. You can pick up items and you can pick up pumpkins and place them back down. 
+There is also some axe functionality but it isn't quite finished yet.
+
+You can move around with WASD and look with the mouse. 
+You can also press left click to use your axe (although that isn't implemented yet) and right click to pick up/drop items. 
+
