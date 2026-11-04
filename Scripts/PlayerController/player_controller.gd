@@ -8,6 +8,7 @@ extends CharacterBody3D
 @export var MAX_LOOK_HEIGHT = 89
 @export var MIN_LOOK_HEIGHT = -80
 
+var isFocused:bool = true
 var cameraRotation:Vector2 = Vector2.ZERO
 
 func _ready() -> void:
@@ -21,7 +22,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	# Handle mouse input.
-	if event is InputEventMouseMotion:
+	if isFocused and event is InputEventMouseMotion:
 		cameraRotation.x -= event.relative.y
 		cameraRotation.y -= event.relative.x
 		cameraRotation.x = clamp(cameraRotation.x, MIN_LOOK_HEIGHT, MAX_LOOK_HEIGHT)
@@ -39,7 +40,15 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+	
+	if !isFocused && Input.is_action_just_pressed("Use"):
+		isFocused = true
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	if Input.is_action_just_pressed("Settings"):
+		isFocused = false
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards")
 	var direction:Vector3 = ($Camera3D.basis * Vector3(input_dir.x, 0, input_dir.y))
